@@ -6,9 +6,6 @@ localCorePath='/Users/susumu/Project/susumu/www/'
 # local path for backups
 localBackupPath='./'
 
-# remote directory id
-dirId=''
-
 # backup date
 backupDate='backup-'`date '+%Y-%m-%d'`
 

@@ -1,4 +1,4 @@
-# WordPress Instant Backup
+# WordPress Backup to Google Drive
 
 WordPress backup to Google Drive with WP-CLI. 
 
@@ -27,11 +27,11 @@ $ ./setup.sh
 ### Uage
 
 ```
-$ curl https://.../run.sh | bash -s <id-dir>
+$ curl https://.../backup.sh | bash -s
 ```
 
 or
 
 ```
-$ ./run.sh <id-dir>
+$ ./backup.sh
 ```

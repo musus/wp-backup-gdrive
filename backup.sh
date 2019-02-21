@@ -40,6 +40,35 @@ cd $imhere
 zip -r $localPath$backupFileNameZip $backupFileName
 rm -rf $localPath$backupFileName
 
+function sendGdrive() {
+    echo "バックアップをGoogle Driveに送りますか？"
+    echo "  yes または no と入力して下さい."
+    read sendGdrive
+
+    if [ -z $sendGdrive ]; then
+
+        echo "  yes または no を入力して下さい."
+        sendGdrive
+        echo "バックアップの送信が完了しました."
+
+    elif [ $sendGdrive = 'yes' ] || [ $sendGdrive = 'YES' ] || [ $sendGdrive = 'y' ] ; then
+
+        gdrive mkdir "wp_backups"
+
+    elif [ $sendGdrive = 'no' ] || [ $sendGdrive = 'NO' ] || [ $sendGdrive = 'n' ] ; then
+
+        echo "バックアップが完了しました."
+
+    else
+
+        echo "  yes または no を入力して下さい."
+        sendGdrive
+
+    fi
+
+
+}
+
 # gdirveでディレクトリに送る
 ## remote path for backups
 remoteBackupPath='wp_backup'

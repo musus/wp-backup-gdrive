@@ -13,7 +13,7 @@ WordPress backup to Google Drive with WP-CLI.
 ### Setup
 
 ```
-$ curl https://.../setup.sh | bash -s
+$ curl https://raw.githubusercontent.com/musus/wp-backup-gdrive/master/setup.sh | bash -s
 ```
 
 or
@@ -27,7 +27,7 @@ $ ./setup.sh
 ### Uage
 
 ```
-$ curl https://.../backup.sh | bash -s
+$ curl https://raw.githubusercontent.com/musus/wp-backup-gdrive/master/backup.sh | bash -s
 ```
 
 or

@@ -6,9 +6,6 @@ localCorePath='/Users/susumu/Project/susumu/www/'
 # local path for backups
 localBackupPath='./'
 
-# remote path for backups
-remoteBackupPath=''
-
 # remote directory id
 dirId=''
 
@@ -44,6 +41,16 @@ cd $imhere
 
 # 日付のディレクトリをzipする
 zip -r $localPath$backupFileNameZip $backupFileName
-rm -rf $backupFileName
+rm -rf $localPath$backupFileName
 
 # gdirveでディレクトリに送る
+## remote path for backups
+remoteBackupPath='wp_backup'
+
+backupId=$(gdrive list --no-header | grep $remoteBackupPath | grep dir | awk '{ print $1}')
+    if [ -z "$backupId" ]; then
+        gdrive mkdir $remoteBackupPath
+        BACKUPSID=$(gdrive list --no-header | grep $remoteBackupPath | grep dir | awk '{ print $1}')
+    fi
+
+gdrive upload --parent $backupId --delete $localPath$backupFileNameZip
